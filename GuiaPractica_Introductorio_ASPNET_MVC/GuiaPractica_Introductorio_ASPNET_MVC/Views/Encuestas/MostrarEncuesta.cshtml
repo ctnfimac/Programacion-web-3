@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Alta";
+    var nombre = ViewBag.Nombre;
+    var descripcion = ViewBag.Descripcion;
+    var deacuerdo = ViewBag.Deacuerdo;
+}
+
+<section class="EncuestaLista">
+    <h2 class="text-center mb-3">Datos de Encuesta</h2>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Esta de acuerdo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">@nombre</th>
+                    <td>@descripcion</td>
+                    <td>@deacuerdo</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

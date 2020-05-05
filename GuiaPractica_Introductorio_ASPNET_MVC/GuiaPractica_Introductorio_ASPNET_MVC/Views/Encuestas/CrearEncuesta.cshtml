@@ -1,0 +1,27 @@
+﻿@model Models.Encuesta
+@{
+    ViewBag.Title = "CrearEncuesta";
+}
+
+    <section class="formulario">
+        <h2 class="text-center mb-3">Datos de Encuesta</h2>
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Esta de acuerdo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">@Model.Nombre</th>
+                        <td>@Model.Descripcion</td>
+                        <td>@Model.Deacuerdo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+

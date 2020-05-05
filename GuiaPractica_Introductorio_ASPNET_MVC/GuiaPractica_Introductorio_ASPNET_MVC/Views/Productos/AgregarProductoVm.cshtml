@@ -1,0 +1,36 @@
+﻿@model GuiaPractica_Introductorio_ASPNET_MVC.Models.ProductoViewModel
+
+
+<section class="formulario">
+    <h2 class="text-center mb-3">Agregando Producto VM</h2>
+    <div class="container">
+        <div class="row justify-content-center mb-1">
+            <form class="bg-dark p-3" action="/Productos/AgregarProducto" method="POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="Id" id="Id" placeholder="Id...">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="Nombre" id="Nombre" placeholder="Nombre...">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="Cantidad" id="Cantidad" placeholder="Cantidad...">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="Precio" id="Precio" placeholder="Precio...">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="FechaAlta" id="FechaAlta" placeholder="FechaAlta...">
+                </div>
+                <div class="form-group">
+                    <select class="form-control" name="Tipo">
+                        @foreach (var item in @Model.tipo)
+                        {
+                            <option value="@item.Id">@item.Descripcion</option>
+                        }
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-success btn-lg btn-block ml-1">Enviar</button>
+            </form>
+        </div>
+    </div>
+</section>
