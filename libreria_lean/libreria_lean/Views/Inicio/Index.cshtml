@@ -1,0 +1,43 @@
+﻿@model List<Repository.product>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de Productos</h2>
+
+
+<div class="container">
+    <a href="/Inicio/Create/" type="button" class="btn btn-outline-success mt-1 mb-3">Crear Nuevo</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Foto</th>  
+                <th scope="col">Operación</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var producto in Model)
+            {
+                <tr>
+                    <th scope="row">@producto.id_product</th>
+                    <td>@producto.name</td>
+                    <td>@producto.description_product</td>
+                    <td>@producto.precio</td>
+                    <td>@producto.stock</td>
+                    <td><img src="@producto.foto" alt="@producto.foto" width="100px" /></td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a href="/Inicio/Delete/@producto.id_product" type="button" class="btn btn-outline-danger mr-1">Eliminar</a>
+                            <a href="/Inicio/Edit/@producto.id_product" type="button" class="btn btn-outline-warning ml-1">Editar</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

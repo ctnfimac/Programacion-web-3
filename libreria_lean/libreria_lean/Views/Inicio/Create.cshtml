@@ -1,0 +1,43 @@
+﻿@model Repository.product
+    @{
+        ViewBag.Title = "Create";
+        var id = ViewBag.max_id;
+    }
+
+    <div class="container">
+        <h2 class="text-center">Create</h2>
+        <row class="d-flex justify-content-center">
+            <form action="/Inicio/Create/" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="id_product">Id</label>
+                    <input type="text" class="form-control" id="id_product" name="id_product" value="@id" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Nombre">
+                </div>
+                <div class="form-group">
+                    <label for="description_product">Descripción</label>
+                    <input type="text" class="form-control" id="description_product" name="description_product" placeholder="Descripción">
+                </div>
+                <div class="form-group">
+                    <label for="precio">Precio</label>
+                    <input type="text" class="form-control" id="precio" name="precio" placeholder="Precio">
+                </div>
+                <div class="form-group">
+                    <img src="@producto.foto" alt="@producto.foto" width="120px" />
+                </div>
+                <div class="form-group">
+                    <label for="foto">Foto</label>
+                    <input type="file" class="form-control" id="foto" name="foto" placeholder="Ingrese una foto">
+                </div>
+                <div class="form-group">
+                    <label for="stock">stock</label>
+                    <input type="text" class="form-control" id="stock" name="stock" placeholder="Stock">
+                </div>
+                <button type="submit" class="btn btn-primary">Agregar</button>
+            </form>
+        </row>
+    </div>
+    
+

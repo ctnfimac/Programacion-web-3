@@ -1,0 +1,40 @@
+﻿@model  Repository.product
+
+
+<div class="container">
+    <h2 class="text-center">Edit</h2>
+    <row class="d-flex justify-content-center">
+        <form action="/Inicio/Edit" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="id">Id</label>
+                <input type="text" class="form-control" id="id" name="id" value="@Model.id_product" disabled>
+                <input type="hidden" class="form-control" id="id_product" name="id_product" value="@Model.id_product">
+            </div>
+            <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" value="@Model.name">
+            </div>
+            <div class="form-group">
+                <label for="description_product">Descripción</label>
+                <input type="text" class="form-control" id="description_product" name="description_product" placeholder="Descripción" value="@Model.description_product">
+            </div>
+            <div class="form-group">
+                <label for="precio">Precio</label>
+                <input type="text" class="form-control" id="precio" name="precio" placeholder="Precio" value="@Model.precio">
+            </div>
+            <div class="form-group">
+                <img src="@Model.foto" alt="@Model.foto" width="100" />
+            </div>
+            <div class="form-group">
+                <label for="foto">Foto</label>
+                <input type="file" class="form-control" id="foto" name="foto" placeholder="Ingrese una foto">
+            </div>
+            <div class="form-group">
+                <label for="stock">stock</label>
+                <input type="text" class="form-control" id="stock" name="stock" placeholder="Stock" value="@Model.stock">
+            </div>
+            <button type="submit" class="btn btn-primary">Modificar</button>
+        </form>
+    </row>
+</div>
+
