@@ -37,6 +37,13 @@ namespace Servicios
             }
         }
 
+        public string[] cantidadDePremiosPorAnio(int anio)
+        {
+            var lista = contexto.Premio.Where(o => o.Anio == anio.ToString()).ToList();
+            string cantidad = lista.Count().ToString();
+            return new string[] { "En el " + anio.ToString() + " hubieron " + cantidad + " premios totales" };
+        }
+
         private bool yaEstaRegistrado(Premio premio)
         {
             bool respuesta = false;
@@ -48,7 +55,6 @@ namespace Servicios
          
             return respuesta;
         }
-
 
     }
 }
