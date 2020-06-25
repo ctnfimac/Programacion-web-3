@@ -22,9 +22,6 @@ namespace EVA2APP.Controllers
         // GET api/values/anio 
         public IEnumerable<string> Get(int id)
         {
-            /*var lista = contexto.Premio.Where(o => o.Anio == id.ToString()).ToList();
-            string cantidad = lista.Count().ToString();
-            return new string[] { "En el " + id.ToString() + " hubieron " + cantidad + " premios totales" };*/
             return servicioPremio.cantidadDePremiosPorAnio(id);
         }
     }

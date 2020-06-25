@@ -27,15 +27,3 @@ CREATE TABLE [dbo].[Premio](
 	CONSTRAINT Premio_Competidor_FK FOREIGN KEY(IdCompetidor) REFERENCES Competidor(IdCompetidor)
 )
 GO
-
-select * from [dbo].[Competidor]
-go
-
-select * from [dbo].[Premio]
-go
-
-delete from [dbo].[Premio] 
-where IdPremio = 4;
-
-truncate table [dbo].[Premio];
-go
