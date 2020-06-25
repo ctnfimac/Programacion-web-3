@@ -39,8 +39,13 @@ namespace Servicios
 
         public string[] cantidadDePremiosPorAnio(int anio)
         {
+            int contador = 0;
             var lista = contexto.Premio.Where(o => o.Anio == anio.ToString()).ToList();
-            string cantidad = lista.Count().ToString();
+            foreach (var item in lista)
+            {
+                contador = contador + item.Cantidad;
+            }
+            string cantidad = contador.ToString();
             return new string[] { "En el " + anio.ToString() + " hubieron " + cantidad + " premios totales" };
         }
 
