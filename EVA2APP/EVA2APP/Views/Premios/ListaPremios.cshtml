@@ -1,0 +1,36 @@
+﻿@model List<DAL.Premio>
+@{
+    ViewBag.Title = "ListaPremios";
+}
+
+<h2>Lista de Premios</h2>
+
+
+<div class="container">
+    <a href="/Premios/AltaPremio/" type="button" class="btn btn-outline-success mt-1 mb-3">Crear Nuevo Premio</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Año</th>
+                <th scope="col">Cantidad de Premios</th>
+                <th scope="col">Competidor</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var premio in Model)
+            {
+            <tr>
+                <th scope="row">@premio.Anio</th>
+                <td>@premio.Cantidad</td>
+                <td>@premio.Competidor.Nombre</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <a href="/Premios/Eliminar/@premio.IdPremio" type="button" class="btn btn-outline-danger mr-1">Eliminar</a>
+                    </div>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

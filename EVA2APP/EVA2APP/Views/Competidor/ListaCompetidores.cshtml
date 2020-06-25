@@ -1,0 +1,34 @@
+﻿@model  List<DAL.Competidor>
+@{
+    ViewBag.Title = "ListaCompetidores";
+}
+
+<h2>Lista de Productos</h2>
+
+
+<div class="container">
+    <a href="/Competidor/Altacompetidor/" type="button" class="btn btn-outline-success mt-1 mb-3">Crear Nuevo Competidor</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Nombre</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var competidor in Model)
+            {
+                <tr>
+                    <th scope="row" class="disabled">@competidor.IdCompetidor</th>
+                    <td>@competidor.Nombre</td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a href="/Competidor/Eliminar/@competidor.IdCompetidor" type="button" class="btn btn-outline-danger mr-1">Eliminar</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

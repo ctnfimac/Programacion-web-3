@@ -1,0 +1,33 @@
+﻿@model DAL.ViewModels.PremioViewModel
+@{
+    ViewBag.Title = "AltaPremio";
+}
+
+<div class="container">
+    <h2 class="text-center">Alta de Premio</h2>
+    <div class="d-flex justify-content-center">
+        <form action="/Premios/AltaPremio" method="POST">
+            <div class="form-group">
+                @Html.LabelFor(o => o.premio.Anio)
+                @Html.EditorFor(o => o.premio.Anio, new { HtmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(o => o.premio.Anio, String.Empty, new { style = "color: tomato" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(o => o.premio.Cantidad)
+                @Html.EditorFor(o => o.premio.Cantidad, new { HtmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(o => o.premio.Cantidad, String.Empty, new { style = "color: tomato" })
+            </div>
+            <div class="form-group">
+                <label for="TipoDonacion">Competidor:</label>
+                <select class="custom-select" id="IdCompetidor" name="premio.IdCompetidor">
+                    @foreach (var item in Model.competidores)
+                    {
+                        <option value="@item.IdCompetidor">@item.Nombre</option>
+                    }
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Aceptar</button>
+        </form>
+    </div>
+</div>
+

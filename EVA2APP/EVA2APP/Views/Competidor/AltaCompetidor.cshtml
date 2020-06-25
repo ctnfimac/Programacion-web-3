@@ -1,0 +1,19 @@
+﻿@model DAL.Competidor
+@{
+    ViewBag.Title = "AltaCompetidor";
+}
+
+<div class="container">
+    <h2 class="text-center">Alta de Competidor</h2>
+    <div class="d-flex justify-content-center">
+        <form action="/Competidor/AltaCompetidor/" method="POST">
+            <div class="form-group">
+                @Html.LabelFor(o => o.Nombre)
+                @Html.EditorFor(o => o.Nombre, new { HtmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(o => o.Nombre, String.Empty, new { style = "color: tomato" })
+            </div>
+            <button type="submit" class="btn btn-primary">Aceptar</button>
+        </form>
+    </div>
+</div>
+
