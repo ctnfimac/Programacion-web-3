@@ -40,7 +40,7 @@ namespace EVA2APP.Controllers
         {
             if (ModelState.IsValid)
             {
-                servicioPremio.Alta(premio);
+                servicioPremio.AltaPremio(premio);
                 return RedirectToAction("ListaPremios");
             }
             else
@@ -57,39 +57,5 @@ namespace EVA2APP.Controllers
             servicioPremio.Eliminar(id);
             return RedirectToAction("ListaPremios");
         }
-
-        /*private PremioServicio servicioPremio = new PremioServicio();
-        private CompetidorServicio servicioCompetidores = new CompetidorServicio();
-        // GET: Premios
-        public ActionResult ListaPremios()
-        {
-            List<Premio> premios = servicioPremio.obtenerPremios();
-            return View(premios);
-        }
-
-        [HttpGet]
-        public ActionResult AltaPremio()
-        {
-            PremioViewModel modelo = new PremioViewModel();
-            modelo.competidores = servicioCompetidores.obtenerCompetidores();
-            return View(modelo);
-        }
-
-        [HttpPost]
-        public ActionResult AltaPremio(Premio premio)
-        {
-            if (ModelState.IsValid)
-            {
-                servicioPremio.AltaPremio(premio);
-                return RedirectToAction("ListaPremios");
-            }
-            else
-            {
-                PremioViewModel modelo = new PremioViewModel();
-                modelo.premio = premio;
-                modelo.competidores = servicioCompetidores.obtenerCompetidores();
-                return View(modelo);
-            }
-        }*/
     }
 }

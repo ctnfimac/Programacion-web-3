@@ -36,40 +36,5 @@ namespace Servicios
                 Eliminar(idCompetidor);
             }  
         }
-
-        /* private Context contexto;
-
-         public CompetidorServicio()
-         {
-             contexto = new Context();
-         }
-
-         public List<Competidor> obtenerCompetidores()
-         {
-             List<Competidor> lista = new List<Competidor>();
-             try
-             {
-                 lista = contexto.Competidor.ToList();
-             }
-             catch (Exception e)
-             {
-                 Console.WriteLine(e.Message);
-             }
-
-             return lista;
-         }
-
-         public void AltaCompetidor(Competidor competidor)
-         {
-             try
-             {
-                 contexto.Competidor.Add(competidor);
-                 contexto.SaveChanges();
-             }
-             catch (Exception e)
-             {
-                 Console.WriteLine(e.Message);
-             }
-         }*/
     }
 }

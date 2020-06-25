@@ -222,7 +222,6 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Premios\ListaPremios.cshtml" />
     <Content Include="Views\Premios\AltaPremio.cshtml" />
-    <None Include="Views\Shared\_BaseLayout.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />

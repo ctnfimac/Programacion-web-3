@@ -14,27 +14,6 @@ namespace Servicios
         {
 
         }
-        /*private Context contexto;
-
-        public PremioServicio()
-        {
-            contexto = new Context();
-        }
-        /*
-        public List<Premio> obtenerPremios()
-        {
-            List<Premio> lista = new List<Premio>();
-            try
-            {
-                lista = contexto.Premio.ToList();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-
-            return lista;
-        }*/
 
         public void AltaPremio(Premio premio)
         {

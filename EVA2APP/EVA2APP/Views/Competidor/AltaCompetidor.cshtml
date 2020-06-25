@@ -3,17 +3,15 @@
     ViewBag.Title = "AltaCompetidor";
 }
 
-<div class="container">
-    <h2 class="text-center">Alta de Competidor</h2>
-    <div class="d-flex justify-content-center">
-        <form action="/Competidor/AltaCompetidor/" method="POST">
-            <div class="form-group">
-                @Html.LabelFor(o => o.Nombre)
-                @Html.EditorFor(o => o.Nombre, new { HtmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(o => o.Nombre, String.Empty, new { style = "color: tomato" })
-            </div>
-            <button type="submit" class="btn btn-primary">Aceptar</button>
-        </form>
-    </div>
+<h2 class="text-center pt-5 pb-4 text-info">Alta de Competidor</h2>
+<div class="d-flex justify-content-center">
+    <form class="border p-4" action="/Competidor/AltaCompetidor/" method="POST">
+        <div class="form-group">
+            @Html.LabelFor(o => o.Nombre)
+            @Html.EditorFor(o => o.Nombre, new { HtmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(o => o.Nombre, String.Empty, new { style = "color: tomato" })
+        </div>
+        <button type="submit" class="btn btn-success">Agregar</button>
+    </form>
 </div>
 
